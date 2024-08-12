@@ -1,4 +1,4 @@
 # picksel
-Software to convert any image into ascii characters to create pictures in the cli.
+Software to convert image pixels into ascii character pixels.
 
 Reference: https://paulbourke.net/dataformats/asciiart/
