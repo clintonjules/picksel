@@ -19,7 +19,7 @@ def grayscale_character_helper(detailed: bool = True) -> dict:
             
     return grayscale_char
 
-def picksel(image, grayscale_characters, output_path: str):
+def populate_file_with_characters(image: np.ndarray, grayscale_characters: dict, output_path: str):
     cache = {}
 
     with open(output_path, "w") as f:
@@ -36,3 +36,10 @@ def picksel(image, grayscale_characters, output_path: str):
                             
             f.write("\n")
             
+def picksel(filepath: str, output_path: str = "output.txt", detailed: bool = True):
+    image = read_image(filepath)
+    
+    grayscale_char_dict = grayscale_character_helper(detailed = detailed)
+    
+    populate_file_with_characters(image, grayscale_char_dict, output_path)
+    
